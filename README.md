@@ -10,7 +10,7 @@ project output video :- "https://drive.google.com/file/d/11cS9lFXPim6V40EyetfUJc
 3)Other Tools: Nodemon, dotenv
 
 
-How Encryption is Implemented
+<h1 style={{color:"white"}}>How Encryption is Implemented</h1>
 
 -Password Encryption: Passwords are encrypted using AES (Advanced Encryption Standard) via the crypto-js library before storing them in the database.
 
