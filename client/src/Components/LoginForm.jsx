@@ -3,23 +3,17 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "./component.css";
 
-const Login = () => {
+const LoginForm = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: "", password: "" });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      // 👉 Password plain bhejna (encryption nahi)
-      const res = await axios.post("http://localhost:3030/api/login", {
-        email: form.email,
-        password: form.password,
-      });
-
+      
+      const res = await axios.post("http://localhost:3030/api/login", form);
       alert(`Login successful! Welcome ${res.data.student.fullName}`);
       navigate("/students");
     } catch (err) {
@@ -31,22 +25,8 @@ const Login = () => {
     <div className="form-container">
       <h2 style={{ textAlign: "center" }}>Login</h2>
       <form onSubmit={handleLogin}>
-        <input
-          name="email"
-          placeholder="Email"
-          type="email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          name="password"
-          placeholder="Password"
-          type="password"
-          value={form.password}
-          onChange={handleChange}
-          required
-        />
+        <input name="email" placeholder="Email" type="email" value={form.email} onChange={handleChange} required />
+        <input name="password" placeholder="Password" type="password" value={form.password} onChange={handleChange} required />
         <button type="submit">Login</button>
       </form>
       <p style={{ textAlign: "center" }}>
@@ -56,4 +36,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;

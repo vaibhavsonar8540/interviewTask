@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const StudentSchema = new mongoose.Schema(
   {
     fullName: { type: String, required: true },
-    email: { type: String, required: true, unique: true }, 
+    email: { type: String, required: true, unique: true },
     phone: { type: Number, required: true },
     DOB: { type: String, required: true },
     gender: { type: String, required: true },
@@ -14,5 +14,4 @@ const StudentSchema = new mongoose.Schema(
   { versionKey: false }
 );
 
-const StudentModel = mongoose.model("students", StudentSchema);
-module.exports = StudentModel;
+module.exports = mongoose.model("students", StudentSchema);
