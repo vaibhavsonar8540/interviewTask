@@ -1,7 +1,7 @@
 project output video :- "https://drive.google.com/file/d/11cS9lFXPim6V40EyetfUJcmBQn91YwHT/view?usp=sharing" ,
 
 
-Tech Stack Used
+<h1 style={{color:"white"}}>Tech Stack Used </h1>
 
 1)Frontend: React, React Router, Axios, Vite, Bootstrap, CryptoJS
 
